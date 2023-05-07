@@ -6,6 +6,11 @@
 Console.WriteLine("Введите длину массива");
 int a = int.Parse(Console.ReadLine());
 
+string[] UserArray = CreateArrayByUser(a);
+
+string[] array = CheckAndCreateNewArray(UserArray);
+
+
 string[] CreateArrayByUser(int a)
 {
 
@@ -20,4 +25,29 @@ string[] CreateArrayByUser(int a)
     return array;
 }
 
-string[] UserArray = CreateArrayByUser(a);
+
+string[] CheckAndCreateNewArray(string[] UserArray)
+{
+    int sum = 0;
+    for (int i = 0; i < UserArray.Length; i++)
+    {
+        if(UserArray[i].Length <= 3)
+        {
+            sum++;
+        }
+    }
+
+    string[] array = new string[sum];
+
+    int j = 0;
+
+    for (int i = 0; i < UserArray.Length; i++)
+    {
+        if(UserArray[i].Length <= 3)
+        {
+            array[j] = UserArray[i];
+            j++;
+        }
+    }
+    return array;
+}
