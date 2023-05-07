@@ -8,7 +8,15 @@ int a = int.Parse(Console.ReadLine());
 
 string[] UserArray = CreateArrayByUser(a);
 
+Console.WriteLine();
+
+PrintArray(UserArray);
+
 string[] array = CheckAndCreateNewArray(UserArray);
+
+Console.WriteLine();
+
+PrintArray(array);
 
 
 string[] CreateArrayByUser(int a)
@@ -50,4 +58,9 @@ string[] CheckAndCreateNewArray(string[] UserArray)
         }
     }
     return array;
+}
+
+void PrintArray(string[] array){
+
+    Console.WriteLine(string.Join(",", array));
 }
