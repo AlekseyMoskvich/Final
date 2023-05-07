@@ -3,4 +3,21 @@
 При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.*/
 
 
-string[] array = new string[3];
+Console.WriteLine("Введите длину массива");
+int a = int.Parse(Console.ReadLine());
+
+string[] CreateArrayByUser(int a)
+{
+
+    string[] array = new string[a];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.WriteLine($"Введите {i+1} элемент массива");
+        array[i] = Console.ReadLine();
+    }
+
+    return array;
+}
+
+string[] UserArray = CreateArrayByUser(a);
